@@ -7,7 +7,6 @@ body {
     text-align: center;
     height: 100%;
     width: 100%;
-    background-image: url(bg.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -35,7 +34,7 @@ body {
 
 .form h1 {
     margin-bottom: 30px;
-    color: white;
+    color: var(--color1);
     text-align: center;
     text-transform: capitalize;
     padding-bottom: 15px;
@@ -49,7 +48,7 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    color: #03a9f4;
+    color: var(--color2);
     letter-spacing: 1px;
     margin-bottom: 30px;
     border: none;
@@ -64,7 +63,7 @@ body {
     left: 0;
     letter-spacing: 1px;
     font-size: 16px;
-    color: white;
+    color: var(--color1);
     transition: 0.5s;
 }
 
@@ -79,7 +78,7 @@ body {
 }
 
 .forgetPass a {
-  color: white;
+  color: var(--color1);
 }
 
 .btn {
@@ -93,7 +92,7 @@ body {
     -moz-border-radius: 17;
     border-radius: 17px;
     font-family: Arial;
-    color: #ffffff;
+    color: #fff;
     font-size: 18px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
