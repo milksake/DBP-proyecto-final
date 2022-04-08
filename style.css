@@ -1,5 +1,5 @@
 html {
-    background-color: white;
+    background-color: var(--color1);
 }
 
 /*SECTION*/
@@ -8,13 +8,13 @@ section {
     display: flex;
     padding: 0 8%;
     align-items: flex-start;
-    background-color: gray;
+    background-color: var(--color3);
 }
 
 section ul {
     flex: 1;
     list-style: none;
-    background-color: black;
+    background-color: var(color2);
 }
 
 section ul li {
@@ -25,7 +25,7 @@ section ul li {
 section div.container {
     flex: 4;
     display: flex;
-    background-color: darkgray;
+    background-color: var(--color4);
     flex-wrap: wrap;
     justify-content: space-around;
 }

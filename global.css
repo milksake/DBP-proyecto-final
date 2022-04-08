@@ -49,6 +49,6 @@ header .searchbar {
 }
 
 header input {
-    color: black;
+    color: var(--color2);
     float: right;
 }
