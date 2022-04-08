@@ -48,9 +48,21 @@ header .searchbar {
     justify-content: center;
 }
 
+header .searchbar button {
+    color: #000;
+}
+
 header input {
     color: var(--color2);
     float: right;
+}
+
+.btn-header {
+    flex: 0;
+    color: var(--color2);
+    background-color: var(--color1);
+    padding: 2px 5px;
+    border-radius: 10%;
 }
 
 footer * {
