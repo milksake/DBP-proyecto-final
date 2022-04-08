@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -8,7 +6,7 @@
 body {
     text-align: center;
     height: 100%;
-    width: 10%;
+    width: 100%;
     background-image: url(bg.jpg);
     background-position: center;
     background-size: cover;
