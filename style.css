@@ -31,8 +31,69 @@ section div.container {
 }
 
 .container div {
+	display: inline-block;
     width: 198px;
     height: 198px;
     border: 1px solid white;
     margin: 30px;
 }
+
+/*Menu lateral mega pro*/
+#boton_menu1{
+	display: none;
+}
+/*Ayudaaa D:*/
+.boton_menu label{cursor: pointer;}
+		
+.container_menu{
+	position: absolute;
+	background: rgba(0,0,0,0,5);
+	width: 100%;
+	height: 100vh;
+	top: 0; left: 0;
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden;
+}
+		
+input[type=checkbox]:checked ~ .container_menu{
+	opacity: 0.9;
+	visibility: visible;
+}
+		
+.cont_menu{
+	width: 100%;
+	max-width: 250px;
+	background: var(--color2);
+	height: 100vh;
+	position: relative;
+	transition: all 500ms ease;
+}
+
+
+
+.cont_menu nav{
+	transform: translateY(15%);
+}
+
+.cont_menu nav a{
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	color: var(--color4);
+	border-left: 5px solid transparent;
+	transition: all 400ms ease;
+}
+
+.cont_menu nav a:hover{
+	border-right: 10px solid var(--color1);
+	background: #1f1f1f;
+}
+
+.cont_menu label{
+	position: absolute;
+	right: 5px;
+	top: 20px;
+	color: var(--color4);
+	cursor: pointer;
+	font-size: 23px;
