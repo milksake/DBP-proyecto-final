@@ -7,9 +7,12 @@
 </head>
 <body>
     <header>
-        <div>
-            <img src="" alt="Header Logo">
-        </div>
+        <nav>
+            <div class="btn-header" onclick="toggleMenu()">
+                &#9776
+            </div>
+            <img src="" alt="Logo">
+        </nav>
         <nav>
             <a href="index.html">Menu</a>
             <a href="register.html">Register</a>
@@ -18,11 +21,11 @@
                 <input type="text" id="busqueda" name="busqueda">
                 <button type="submit">Search</button>
             </div>
-            <a class="btn-header" href="cart.html">Cart</a>
+            <a class="btn-header" href="cart.html">&#x1f6d2;</a>
         </nav>
     </header>
     <section>
-        <ul>
+        <ul id="toggle-menu">
             <li>Category</li>
             <li>Category</li>
             <li>Category</li>
@@ -59,5 +62,6 @@
             <a href="#">Algo1</a>
         </nav>
     </footer>
+    <script src="toggleMenu.js"></script>
 </body>
 </html>       

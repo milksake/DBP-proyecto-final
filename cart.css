@@ -6,8 +6,7 @@ html {
 
 section {
     display: flex;
-    padding: 0 8%;
-    align-items: flex-start;
+    align-items: stretch;
     background-color: var(--color3);
 }
 
@@ -28,8 +27,8 @@ section div.container {
     background-color: var(--color4);
     align-items: center;
     flex-direction: column;
+    padding: 3% 0;
 }
-
 
 .container1 {
     width: 80%;
