@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <title>Menu</title>
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href='{{ url_for("static", filename="global.css") }}'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="style.css") }}'>
 </head>
 <body>
     <header>
@@ -71,7 +71,7 @@
             <a href="#">Algo1</a>
         </nav>
     </footer>
-    <script src="toggleMenu.js">
+    <script src='{{ url_for("static", filename="toggleMenu.js") }}'>
     </script>
 </body>
 </html>
