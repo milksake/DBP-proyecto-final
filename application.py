@@ -2,6 +2,7 @@ from unicodedata import name
 from flask import Flask, redirect, render_template, request, url_for
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from user import users, get_user, User
+from products import Product, get_product
 
 app = Flask(__name__)
 login_manager = LoginManager()
