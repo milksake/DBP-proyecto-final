@@ -8,7 +8,7 @@ class Product():
         self.image = image
         self.description = description
 
-ejemplo = Product(1, "sample", 100, "link", "sample_text")
+ejemplo = Product(1, "sample", 5, 100, "link", "sample_text")
 #lista de productos
 products = [ejemplo]
 
