@@ -57,18 +57,25 @@ header input {
     float: right;
 }
 
-
 #toggle-menu {
-    flex: 1;
+    flex: 0 0;
+    min-width: 0px;
     list-style: none;
     background-color: var(--color2);
-	display: none;
     text-align: left;
+    transition: flex-grow 1s, color 1s;
+    color: var(--color2);
 }
 
 #toggle-menu li {
-    color: white;
-    margin: 30px 0 30px 27%;
+    color: inherit;
+    padding: 5% 0 5% 27%;
+}
+
+#toggle-menu li:hover{
+    background-color: var(--color1);
+    color: var(--color2);
+    font-weight: bold;
 }
 
 .btn-header {

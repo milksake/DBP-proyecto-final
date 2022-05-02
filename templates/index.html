@@ -12,34 +12,16 @@
             <li>Category</li>
             <li>Category</li>
         </ul>
+        
         <div class="container">
+            <!--experimentores-->
+            {%for product in product_list%}
             <div>
-                Product1
+                <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
+                <h2>{{product.name}}</h2>
+                <h3>S/.{{product.price}}</h3>
             </div>
-            <div>
-                Product2
-            </div>
-            <div>
-                Product3
-            </div>
-            <div>
-                Product4
-            </div>
-            <div>
-                Product5
-            </div>
-            <div>
-                Product6
-            </div>
-            <div>
-                Product7
-            </div>
-            <div>
-                Product8
-            </div>
-            <div>
-                Product9
-            </div>
+            {%endfor%}
         </div>
     </section>
 {%endblock%}

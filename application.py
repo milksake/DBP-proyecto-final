@@ -2,6 +2,7 @@ from unicodedata import name
 from flask import Flask, redirect, render_template, request, url_for
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from user import users, get_user, User
+from products import Product, products, get_product
 
 app = Flask(__name__)
 login_manager = LoginManager()
@@ -17,7 +18,7 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', product_list=products)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
