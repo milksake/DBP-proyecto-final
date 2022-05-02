@@ -15,38 +15,13 @@
         
         <div class="container">
             <!--experimentores-->
-            {%for a in product_list%}
+            {%for product in product_list%}
             <div>
-                ejemplo
+                <img src="{{product.image}}">
+                <h2>{{product.name}}</h2>
+                <h3>S/.{{product.price}}</h3>
             </div>
             {%endfor%}
-            <!--<div>
-                Product1
-            </div>
-            <div>
-                Product2
-            </div>
-            <div>
-                Product3
-            </div>
-            <div>
-                Product4
-            </div>
-            <div>
-                Product5
-            </div>
-            <div>
-                Product6
-            </div>
-            <div>
-                Product7
-            </div>
-            <div>
-                Product8
-            </div>
-            <div>
-                Product9
-            </div>-->
         </div>
     </section>
 {%endblock%}

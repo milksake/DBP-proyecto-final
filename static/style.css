@@ -22,9 +22,25 @@ section div.container {
 }
 
 .container div {
-    width: 198px;
-    height: 198px;
-    border: 1px solid white;
+    width: fit-content;
 	margin-top: 5%;
 	margin-left: 5%;
+}
+
+.container div h2 {
+    background-color: var(--color2);
+    width: fit-content;
+    color: white;
+    padding: 5px;
+    border-radius: 10%;
+    margin: 5%;
+}
+
+.container div h3 {
+    margin: 5%;
+}
+
+.container div img {
+    border-radius: 10%;
+    border: 2px solid var(--color2);
 }
