@@ -17,7 +17,7 @@
             <!--experimentores-->
             {%for product in product_list%}
             <div>
-                <img src="{{product.image}}">
+                <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
                 <h2>{{product.name}}</h2>
                 <h3>S/.{{product.price}}</h3>
             </div>
