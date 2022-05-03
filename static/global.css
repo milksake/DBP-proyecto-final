@@ -58,18 +58,20 @@ header input {
 }
 
 #toggle-menu {
-    flex: 0 0;
+    flex: 0;
     min-width: 0px;
     list-style: none;
     background-color: var(--color2);
     text-align: left;
-    transition: flex-grow 1s, color 1s;
+    transition: flex-grow 1s, color 0.7s;
     color: var(--color2);
+    padding: 0;
 }
 
 #toggle-menu li {
     color: inherit;
     padding: 5% 0 5% 27%;
+    margin: 0;
 }
 
 #toggle-menu li:hover{
