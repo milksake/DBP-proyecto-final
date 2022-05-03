@@ -6,6 +6,6 @@ function toggleMenu() {
     }
     else {
         menu.style.flexGrow = "1";
-        menu.style.color = "white"
+        menu.style.color = "white";
     }
 }

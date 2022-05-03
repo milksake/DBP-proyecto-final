@@ -6,9 +6,6 @@ body {
     text-align: center;
     height: 100%;
     width: 100%;
-    background-position: center;
-    background-size: cover;
-    background-color: var(--color4);
 }
 
 section {
@@ -22,7 +19,8 @@ section {
     flex: 4;
     display: flex;
     justify-content: center;
-    margin: 5%;
+    padding: 5%;
+    background-color: var(--color1);
 }
 
 .form {
@@ -34,7 +32,7 @@ section {
 
 .form h1 {
     margin-bottom: 30px;
-    color: var(--color1);
+    color: white;
     text-align: center;
     text-transform: capitalize;
     padding-bottom: 15px;
@@ -67,8 +65,13 @@ section {
     transition: 0.5s;
 }
 
+.forgetPass {
+    padding-bottom: 20px;
+}
+
 .forgetPass a {
-  color: var(--color1);
+    color: var(--color1);
+    font-size: small;
 }
 
 .btn {
@@ -79,13 +82,12 @@ section {
     font-size: 18px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
-    margin-bottom: 20px;
     border: 0px;
-  }
+}
 
-  .btn:hover {
+.btn:hover {
     background: var(--color4);
     text-decoration: none;
     color: var(--color2);
-  }
+}
 
