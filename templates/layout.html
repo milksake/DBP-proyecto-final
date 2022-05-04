@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Menu</title>
+    <title>{%block title%}{%endblock%}</title>
     <link rel="stylesheet" href='{{ url_for("static", filename="global.css") }}'>
 	{%block estilos%}{%endblock%}
 </head>
@@ -27,7 +27,7 @@
             </div>
             <a class="btn-header" href="cart">&#x1f6d2;</a>
             {% if current_user.is_authenticated %}
-                <div>Bienvenido {{current_user.username}}</div>
+                <div>{{current_user.username}}</div>
             {% endif %}
         </nav>
     </header>
@@ -45,5 +45,15 @@
     </footer>
     <script src='{{ url_for("static", filename="toggleMenu.js") }}'>
     </script>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <script>
+                    window.alert("{{message}}")
+                </script>
+            {% endfor %}    
+        {% endif %}
+    {% endwith %}
+    
 </body>
 </html>

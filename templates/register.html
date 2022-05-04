@@ -1,5 +1,9 @@
 {%extends "layout.html"%}
 
+{%block title%}
+Register
+{%endblock%}
+
 {%block estilos%}
 <link rel="stylesheet" href='{{ url_for("static", filename="login.css") }}'>
 {%endblock%}
@@ -26,7 +30,7 @@
                         <div class="input-box">
                             <label>Email</label>
                             <br>
-                            <input type="email" name="Email" autocomplete="off" required>
+                            <input type="email" name="email" autocomplete="off" required>
                         </div>
                         
                         <div class="input-box">
@@ -38,7 +42,7 @@
                         <div class="input-box">
                             <label>Confirm Password</label>
                             <br>
-                            <input type="password" name="password" autocomplete="off" required>
+                            <input type="password" name="password-repeat" autocomplete="off" required>
                         </div>
                         
                         <button class="btn" type="submit" style="margin-bottom: 0;">Register</button>
