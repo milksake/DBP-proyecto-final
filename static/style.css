@@ -54,8 +54,3 @@ section div.container {
     border-radius: 10%;
     border: 2px solid var(--color2);
 }
-
-a:hover{
-    font-weight: bold;
-    transition: flex-grow 1s, color 0.7s;
-}

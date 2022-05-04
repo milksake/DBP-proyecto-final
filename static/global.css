@@ -28,10 +28,6 @@ header * {
     box-sizing: content-box;
 }
 
-header div {
-    color: var(--color1);
-}
-
 header nav, footer nav {
     display: flex;
     align-items: center;
@@ -40,7 +36,13 @@ header nav, footer nav {
 
 header a, footer a {
     flex: 1;
-    text-align: right;
+    text-align: center;
+    transition: color 0.2s;
+    font-weight: bold;
+}
+
+header a:hover, footer a:hover{
+    color: white;
 }
 
 header .searchbar {
@@ -91,9 +93,4 @@ header input {
 
 footer * {
     color: var(--color1);
-}
-
-a:hover{
-    font-weight: bold;
-    transition: flex-grow 1s, color 0.7s;
 }
