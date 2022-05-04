@@ -66,6 +66,7 @@ header input {
     transition: flex-grow 1s, color 0.7s;
     color: var(--color2);
     padding: 0;
+    
 }
 
 #toggle-menu li {
@@ -78,14 +79,21 @@ header input {
     background-color: var(--color1);
     color: var(--color2);
     font-weight: bold;
+    cursor: pointer;
 }
 
 .btn-header {
     flex: 0;
     color: white;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
 footer * {
     color: var(--color1);
+}
+
+a:hover{
+    font-weight: bold;
+    transition: flex-grow 1s, color 0.7s;
 }

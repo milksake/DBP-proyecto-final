@@ -28,7 +28,7 @@ def login():
         user = get_user(request.form['username'])
         if user and user.check_password(request.form['password']):
             login_user(user, remember=True)
-            return render_template('index.html')
+            return redirect(url_for('index'))
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])

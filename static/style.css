@@ -36,6 +36,16 @@ section div.container {
     margin: 5%;
 }
 
+.container div h2:hover {
+    background-color: #2e2637;
+    width: fit-content;
+    color: white;
+    padding: 5px;
+    border-radius: 10%;
+    margin: 5%;
+    cursor: pointer;
+}
+
 .container div h3 {
     margin: 5%;
 }
@@ -43,4 +53,9 @@ section div.container {
 .container div img {
     border-radius: 10%;
     border: 2px solid var(--color2);
+}
+
+a:hover{
+    font-weight: bold;
+    transition: flex-grow 1s, color 0.7s;
 }
