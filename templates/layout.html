@@ -45,5 +45,15 @@
     </footer>
     <script src='{{ url_for("static", filename="toggleMenu.js") }}'>
     </script>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <script>
+                    window.alert("{{message}}")
+                </script>
+            {% endfor %}    
+        {% endif %}
+    {% endwith %}
+    
 </body>
 </html>
