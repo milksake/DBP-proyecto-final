@@ -2,7 +2,7 @@
 products = []
 
 class Product():
-    def __init__(self, id, name, stars, price, image, description, user) -> None:
+    def __init__(self, id, name, stars, price, image, description, user=None) -> None:
         self.id = id
         self.name = name.capitalize()
         self.stars = stars
