@@ -2,13 +2,14 @@
 products = []
 
 class Product():
-    def __init__(self, id, name, stars, price, image, description) -> None:
+    def __init__(self, id, name, stars, price, image, description, user) -> None:
         self.id = id
         self.name = name.capitalize()
         self.stars = stars
         self.price = price
         self.image = image
         self.description = description
+        self.user = user
 
 products.append(Product(1, "Cubo ", 5, 80, "imagenes/cubo1.jpeg", "cubo"))
 products.append(Product(2, "cubo", 5, 60, "imagenes/cubo2.jpeg", "cubo"))

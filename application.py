@@ -64,5 +64,12 @@ def logout():
 def cart():
     return render_template('cart.html')
 
+@app.route('/new_product', methods=['GET', 'POST'])
+def new_product():
+    if request.method == 'POST':
+        newProduct = Product(str(len(products)), request.form['product_name'], 0, request.form['price'], '#', request.form['description'])
+        products.append(newProduct)
+    return render_template('new_product.html')
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
