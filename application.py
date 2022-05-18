@@ -71,5 +71,9 @@ def new_product():
         products.append(newProduct)
     return render_template('new_product.html')
 
+@app.route('/product/<int:id>')
+def display_product(id):
+    return render_template('product.html', product=get_product(id))
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)

@@ -1,0 +1,39 @@
+/*Plz somebody help me style this :((*/
+
+html {
+    background-color: var(--color1);
+}
+
+/*SECTION*/
+
+section {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--color3);
+}
+
+section ul {
+    flex: 1;
+    list-style: none;
+    background-color: var(color2);
+}
+
+section ul li {
+    color: white;
+    margin: 30px 0 30px 50px
+}
+
+section div.container {
+    flex: 4;  
+    display: flex;
+    background-color: var(--color4);
+    align-items: center;
+    flex-direction: column;
+    padding: 3% 0;
+}
+
+.container1 {
+    width: 80%;
+    border: 3px solid white;
+    margin: 30px;
+}

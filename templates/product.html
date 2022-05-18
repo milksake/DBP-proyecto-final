@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{product.name}}
+{% endblock %}
+
+
+{%block estilos%}
+<link rel="stylesheet" href='{{ url_for("static", filename="product.css") }}'>
+{%endblock%}
+
+{% block contenido %}
+<section>
+    <ul id="toggle-menu">
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+    </ul>
+    <div class="container">
+        {% if product %}
+            <div class ="container1">
+                <h1>{{product.name}}</h1>
+                <img src="{{url_for('static', filename=product.image)}}">
+                <h2>S/.{{product.price}}</h2>
+                <h3>Stars: {{product.stars}}</h3>
+                <h3>Submitted by: {{product.user.username}}</h3>
+                <p>{{product.description}}</p>
+            </div>
+        {% endif %}
+    </div>       
+</section>
+{% endblock %}

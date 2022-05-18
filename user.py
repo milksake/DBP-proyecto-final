@@ -15,7 +15,7 @@ class User(UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-users = []
+users = [User("0", "admin", "example@mail.com", "grupo8plataformas", True)]
 
 def get_user(username):
     for user in users:

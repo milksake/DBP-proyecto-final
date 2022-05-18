@@ -46,6 +46,10 @@ section div.container {
     cursor: pointer;
 }
 
+.container div h2 a {
+    color: white;
+}
+
 .container div h3 {
     margin: 5%;
 }
