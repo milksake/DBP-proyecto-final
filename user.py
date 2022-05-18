@@ -8,6 +8,7 @@ class User(UserMixin):
         self.email = email
         self.password = generate_password_hash(password)
         self.is_admin = is_admin
+        self.cart = []
     
     def set_password(self, password):
         self.password = generate_password_hash(password)

@@ -27,6 +27,7 @@
                 <h3>Stars: {{product.stars}}</h3>
                 <h3>Submitted by: {{product.user.username}}</h3>
                 <p>{{product.description}}</p>
+                <button><a href="{{url_for('add_to_cart', id=product.id)}}">Add to cart</a></button>
             </div>
         {% endif %}
     </div>       

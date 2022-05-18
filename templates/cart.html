@@ -18,24 +18,15 @@ Carrito
             <li>Category</li>
         </ul>
         <div class="container">
-             <div class ="container1">
-                Product1
-            </div>
-            <div class ="container1">
-                Product2
-            </div>
-            <div class ="container1">
-                Product3
-            </div>
-            <div class ="container1">
-                Product4
-            </div>
-            <div class ="container1">
-                Product5
-            </div>
-            <div class ="container1">
-                Product6
-            </div>
+            {% if product_list %}
+                {%for product in product_list%}
+                    <div class="container1">
+                        <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
+                        <h2><a href="{{ url_for('display_product', id=product.id) }}">{{product.name}}</a></h2>
+                        <h3>S/.{{product.price}}</h3>
+                    </div>
+                {%endfor%}
+            {% endif %}
         </div>       
     </section>
 {%endblock%}

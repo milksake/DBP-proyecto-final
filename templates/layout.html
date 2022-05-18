@@ -25,7 +25,7 @@
                 <input type="text" id="busqueda" name="busqueda">
                 <button type="submit">Search</button>
             </div>
-            <a class="btn-header" href="cart">&#x1f6d2;</a>
+            <a class="btn-header" href="{{ url_for('cart') }}">&#x1f6d2;</a>
             {% if current_user.is_authenticated %}
                 <div>{{current_user.username}}</div>
             {% endif %}
@@ -49,7 +49,7 @@
         {% if messages %}
             {% for category, message in messages %}
                 <script>
-                    window.alert("{{message}}")
+                    setTimeout(function(){ window.alert("{{message}}"); }, 100);
                 </script>
             {% endfor %}    
         {% endif %}

@@ -62,7 +62,10 @@ def logout():
     
 @app.route('/cart')
 def cart():
-    return render_template('cart.html')
+    if current_user.is_authenticated:
+        return render_template('cart.html', product_list=current_user.cart)
+    flash("Login to add products to your cart")
+    return redirect(url_for('login'))
 
 @app.route('/new_product', methods=['GET', 'POST'])
 def new_product():
@@ -74,6 +77,15 @@ def new_product():
 @app.route('/product/<int:id>')
 def display_product(id):
     return render_template('product.html', product=get_product(id))
+
+@app.route('/add-to-cart/<int:id>')
+def add_to_cart(id):
+    if current_user.is_authenticated:
+        current_user.cart.append(get_product(id))
+        flash("Product added to cart")
+        return redirect(url_for("display_product", id=id))
+    flash("Login to add products to your cart")
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
