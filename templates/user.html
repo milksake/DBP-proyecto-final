@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{user.username}}
+{% endblock %}
+
+
+{%block estilos%}
+<link rel="stylesheet" href='{{ url_for("static", filename="user.css") }}'>
+{%endblock%}
+
+{% block contenido %}
+<section>
+    <ul id="toggle-menu">
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+    </ul>
+    <div class="container">
+      <h1>Datos impersonales</h1>
+      <p>User: {{ user.username }}</p>
+      <p>Email: {{user.email}}</p>
+      <h2>Products added by {{ user.username }}</h2>
+      {%for product in product_list%}
+      <div>
+          <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
+          <h2><a href="{{ url_for('display_product', id=product.id) }}">{{product.name}}</a></h2>
+          <h3>S/.{{product.price}}</h3>
+      </div>
+      {%endfor%}
+      
+    </div>
+</section>
+{% endblock %}

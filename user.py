@@ -8,6 +8,7 @@ class User(UserMixin):
         self.email = email
         self.password = generate_password_hash(password)
         self.is_admin = is_admin
+        self.cart = []
     
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -15,11 +16,17 @@ class User(UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-users = []
+users = [User("0", "admin", "example@mail.com", "grupo8plataformas", True)]
 
 def get_user(username):
     for user in users:
         if user.username == username:
+            return user
+    return None
+
+def get_user_from_id(id):
+    for user in users:
+        if user.id == id:
             return user
     return None
 

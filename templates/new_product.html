@@ -1,0 +1,55 @@
+{%extends "layout.html"%}
+
+{%block title%}
+New Product
+{%endblock%}
+
+{%block estilos%}
+<link rel="stylesheet" href='{{ url_for("static", filename="login.css") }}'>
+{%endblock%}
+
+
+{%block contenido%}
+<section>
+    <ul id="toggle-menu">
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+        <li>Category</li>
+    </ul>
+    <div class="page">
+
+        <div class="form">
+            <h1>Formulario de nuevo producto</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="input-box">
+                    <label>Nombre del producto</label>
+                    <br>
+                    <input type="text" name="product_name" autocomplete="off">
+                </div>
+                <div class="input-box">
+                    <label>Precio</label>
+                    <br>
+                    <input type="text" name="price" autocomplete="off">
+                </div>
+                
+                <div class="input-box">
+                    <label>Descripcion del producto</label>
+                    <br>
+                    <input type="text" name="description" autocomplete="off">
+                </div>
+                
+                <div class="input-box">
+                    <label>Imagen del producto</label>
+                    <br>
+                    <input type="file" name="file" autocomplete="off">
+                </div>
+
+                <button class="btn" type="submit" style="margin-bottom: 0;">Register</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+{%endblock%}
