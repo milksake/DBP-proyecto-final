@@ -2,11 +2,22 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from user import users, get_user, User, get_user_from_email
 from products import Product, products, get_product
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'GRUPO8DEDESARROLLOBASADOENPLATAFORMAS'
+
+UPLOAD_FOLDER = 'static/imagenes/'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -70,7 +81,21 @@ def cart():
 @app.route('/new_product', methods=['GET', 'POST'])
 def new_product():
     if request.method == 'POST':
-        newProduct = Product(str(len(products)), request.form['product_name'], 0, request.form['price'], '#', request.form['description'])
+        
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No image selected for uploading')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #print('upload_image filename: ' + filename)
+            flash('Image successfully uploaded and displayed below')
+        image_dir='/imagenes/'+filename
+        newProduct = Product(str(len(products)), request.form['product_name'], 0, request.form['price'], image_dir, request.form['description'], users[0])
         products.append(newProduct)
     return render_template('new_product.html')
 
