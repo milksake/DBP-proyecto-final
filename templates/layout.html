@@ -27,7 +27,7 @@
             </div>
             <a class="btn-header" href="{{ url_for('cart') }}">&#x1f6d2;</a>
             {% if current_user.is_authenticated %}
-                <div>{{current_user.username}}</div>
+              <div><a href="{{ url_for('display_user', id=current_user.id)}}">{{current_user.username}}</a></div>
             {% endif %}
         </nav>
     </header>

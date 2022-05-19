@@ -22,6 +22,13 @@ def get_product(id):
 def add_product(name, stars, price, image, description, user):
     products.append(Product(len(products), name, stars, price, image, description, user))
 
+def get_product_list(user):
+    products_list = []
+    for i in products:
+        if i.user == user:
+            products_list.append(i)
+    return products_list
+
 # Placeholder products
 
 add_product("Cubo ", 5, 80, "imagenes/cubo1.jpeg", "cubo", users[0])

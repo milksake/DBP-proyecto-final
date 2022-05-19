@@ -24,6 +24,12 @@ def get_user(username):
             return user
     return None
 
+def get_user_from_id(id):
+    for user in users:
+        if user.id == id:
+            return user
+    return None
+
 def get_user_from_email(email):
     for user in users:
         if user.email == email:
