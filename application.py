@@ -78,8 +78,11 @@ def cart():
     flash("Login to add products to your cart")
     return redirect(url_for('login'))
 
-@app.route('/new_product', methods=['GET', 'POST'])
+@app.route('/add-product', methods=['GET', 'POST'])
 def new_product():
+    if current_user.is_authenticated == False:
+        flash("Login to add products to the shop")
+        return redirect(url_for('login'))
     if request.method == 'POST':
         
         if 'file' not in request.files:
@@ -95,7 +98,7 @@ def new_product():
             #print('upload_image filename: ' + filename)
             flash('Image successfully uploaded and displayed below')
         image_dir='/imagenes/'+filename
-        newProduct = Product(str(len(products)), request.form['product_name'], 0, request.form['price'], image_dir, request.form['description'], users[0])
+        newProduct = Product(len(products), request.form['product_name'], 0, request.form['price'], image_dir, request.form['description'], current_user)
         products.append(newProduct)
     return render_template('new_product.html')
 
