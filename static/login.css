@@ -65,6 +65,17 @@ section {
     transition: 0.5s;
 }
 
+.form .form__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #c53b3e;
+    display: none;  
+}
+
+.form .form__input-error-activo {
+    display: inline;
+}
+
 .forgetPass {
     padding-bottom: 20px;
 }

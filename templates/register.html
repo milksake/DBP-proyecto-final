@@ -23,22 +23,25 @@ Register
 
                 <div class="form">
                     <h1>Register Form</h1>
-                    <form action="" method="post">
-                        <div class="input-box">
+                    <form action="" method="post" id="form">
+                        <div class="input-box" id="username-input">
                             <label>Username</label>
                             <br>
                             <input type="text" name="username" autocomplete="off" required>
+                            <p class="form__input-error">4 to 16 digits, numbers, letters and underscore.</p>
                         </div>
-                        <div class="input-box">
+                        <div class="input-box" id="email-input">
                             <label>Email</label>
                             <br>
                             <input type="email" name="email" autocomplete="off" required>
+                            <p class="form__input-error">Letters, numbers, periods, hyphens and underscores.</p>
                         </div>
                         
-                        <div class="input-box">
+                        <div class="input-box" id="password-input">
                             <label>Password</label>
                             <br>
                             <input type="password" name="password" autocomplete="off" required>
+                            <p class="form__input-error">4 to 12 digits.</p>
                         </div>
                         
                         <div class="input-box">
@@ -53,4 +56,6 @@ Register
 
             </div>
         </section>
+<script src='{{ url_for("static", filename="form.js") }}'>
+</script>
 {%endblock%}
