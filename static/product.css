@@ -33,7 +33,17 @@ section div.container {
 }
 
 .container1 {
-    width: 80%;
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
     margin: 30px;
+  background-color: rgba(154, 164, 237, 0.33);
+  padding: 20px;
+  border-radius: 2%;
+}
+
+.container1 img {
+    border-radius:  2%;
+}
+
+.container1 p {
+    margin: 10px 0px;
 }
