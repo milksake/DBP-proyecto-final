@@ -21,12 +21,13 @@
         <a href="{{url_for('display_tagged_products', tag='Mirror cubes')}}"><li>Mirror cubes</li></a>
     </ul>
     <div class="container">
-      <h1>Datos impersonales</h1>
+      <h1>Datos personales</h1>
       <p>User: {{ user.username }}</p>
       <p>Email: {{user.email}}</p>
       <h2>Products added by {{ user.username }}</h2>
+      <div class="products">
       {%for product in product_list%}
-      <div>
+      <div class="container1">
 
         <img style="border: 10px solid; color: rgba(38, 11, 3, 0.641);" img src="{{url_for('static', filename=product.image)}}" alt="" width="400" height="400" />
 
@@ -34,6 +35,7 @@
           <h3>S/.{{product.price}}</h3>
       </div>
       {%endfor%}
+      </div>
       
     </div>
 </section>

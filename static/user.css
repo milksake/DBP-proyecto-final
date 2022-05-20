@@ -35,4 +35,26 @@ section div.container {
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #dbca71 10px ), repeating-linear-gradient( #5c410763, #3c2502 );
 }
 
+.container h2 {
+    margin-top: 20px;
+}
 
+.container h1 {
+    margin-bottom: 10px;
+}
+
+.container1 {
+    margin-bottom: 20px;
+}
+
+.container1 h2 {
+    max-width: fit-content;
+    margin-top: 10px;
+}
+
+.products {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
