@@ -25,6 +25,9 @@ section div.container {
     width: fit-content;
 	margin-top: 5%;
 	margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container div h2 {
@@ -32,8 +35,10 @@ section div.container {
     width: fit-content;
     color: white;
     padding: 5px;
-    border-radius: 10%;
+    border-radius: 5%;
     margin: 5%;
+    text-align: center;
+    max-width: fit-content;
 }
 
 .container div h2:hover {
@@ -41,7 +46,6 @@ section div.container {
     width: fit-content;
     color: white;
     padding: 5px;
-    border-radius: 10%;
     margin: 5%;
     cursor: pointer;
 }

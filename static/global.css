@@ -14,7 +14,7 @@
 
 header, footer {
     background-color: var(--color2);
-    height: 100px;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,4 +93,8 @@ header input {
 
 footer * {
     color: var(--color1);
+}
+
+section {
+    min-height: 80vh;
 }
