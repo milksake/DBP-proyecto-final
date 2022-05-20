@@ -25,7 +25,9 @@
       <h2>Products added by {{ user.username }}</h2>
       {%for product in product_list%}
       <div>
-          <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
+
+        <img style="border: 10px solid; color: rgba(38, 11, 3, 0.641);" img src="{{url_for('static', filename=product.image)}}" alt="" width="400" height="400" />
+
           <h2><a href="{{ url_for('display_product', id=product.id) }}">{{product.name}}</a></h2>
           <h3>S/.{{product.price}}</h3>
       </div>
