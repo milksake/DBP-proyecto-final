@@ -74,7 +74,10 @@ def logout():
 @app.route('/cart')
 def cart():
     if current_user.is_authenticated:
-        return render_template('cart.html', product_list=current_user.cart)
+        price = 0
+        for i in current_user.cart:
+            price += i.price
+        return render_template('cart.html', product_list=current_user.cart, price=price)
     flash("Login to add products to your cart")
     return redirect(url_for('login'))
 
@@ -101,6 +104,15 @@ def new_product():
         newProduct = Product(len(products), request.form['product_name'], 0, request.form['price'], image_dir, request.form['description'], current_user)
         products.append(newProduct)
     return render_template('new_product.html')
+
+
+@app.route('/remove-from-cart/<int:id>')
+def remove_from_cart(id):
+    if current_user.is_authenticated:
+        current_user.cart.remove(get_product(id))
+        return redirect(url_for("cart", id=id))
+    flash("Login to add products to your cart")
+    return redirect(url_for('login'))
 
 @app.route('/product/<int:id>')
 def display_product(id):

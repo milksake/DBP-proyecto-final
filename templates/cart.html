@@ -23,11 +23,22 @@ Carrito
             {% if product_list %}
                 {%for product in product_list%}
                     <div class="container1">
-                        <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
-                        <h2><a href="{{ url_for('display_product', id=product.id) }}">{{product.name}}</a></h2>
-                        <h3>S/.{{product.price}}</h3>
+                        <div class="right">
+                            <img src="{{url_for('static', filename=product.image)}}" height="230em" width="230em">
+                            <div class="right-text">
+                                <h2><a href="{{ url_for('display_product', id=product.id) }}">{{product.name}}</a></h2>
+                                <p>{{product.description}}</p>
+                            </div>
+                        </div>
+                        <div class="left">
+                            <h3>S/.{{product.price}}</h3>
+                            <button><a href="{{url_for('remove_from_cart', id=product.id)}}">Remove &#128722; </a></button>
+                        </div>
                     </div>
                 {%endfor%}
+                <p>Precio: {{price}}</p>
+            {% else %}
+                <p>Your cart is empty :c</p>
             {% endif %}
         </div>       
     </section>
