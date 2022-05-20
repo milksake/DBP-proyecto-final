@@ -1,7 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, url_for
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from user import users, get_user, User, get_user_from_email, get_user_from_id
-from products import Product, products, get_product, get_product_list, get_product_list_from_tag
+from products import Product, products, get_product, get_product_list, get_product_list_from_tag, search_products
 from werkzeug.utils import secure_filename
 import os
 
@@ -138,6 +138,15 @@ def display_tagged_products(tag):
     tetris = get_product_list_from_tag(tag)
     flash(f'Showing products tagged {tag}')
     return render_template('index.html', product_list=tetris)
+
+@app.route('/search/<text>')
+def display_searched_products(text):
+    product_list = search_products(text)
+    if product_list:
+        flash("Products that contain " + text)
+    else:
+        flash("There are no products that contain " + text)
+    return render_template('index.html', product_list=product_list)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)

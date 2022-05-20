@@ -23,7 +23,8 @@
             {% endif %}            
             <div class="searchbar">
                 <input type="text" id="busqueda" name="busqueda">
-                <button type="submit">Search</button>
+                <!--No se asusten si les sale error en la linea de abajo-->
+                <button type="submit" onclick="search('{{ url_for("display_searched_products", text="") }}')">Search</button>
             </div>
             <a class="btn-header" href="{{ url_for('cart') }}">&#x1f6d2;</a>
             {% if current_user.is_authenticated %}
@@ -44,6 +45,8 @@
         </nav>
     </footer>
     <script src='{{ url_for("static", filename="toggleMenu.js") }}'>
+    </script>
+    <script src='{{ url_for("static", filename="searchbar.js") }}'>
     </script>
     {% with messages = get_flashed_messages(with_categories = true) %}
         {% if messages %}

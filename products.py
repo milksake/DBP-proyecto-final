@@ -38,6 +38,15 @@ def get_product_list_from_tag(tag):
                 product_list.append(x)
     return product_list
 
+def search_products(text):
+    product_list = []
+    for x in products:
+        for i in range(len(x.name) - len(text) + 1):
+            if x.name[i:i + len(text)].casefold() == text.casefold():
+                product_list.append(x)
+                break
+    return product_list
+
 # Placeholder products
 
 add_product("Cubo de Rubik Lanlan Dodecaedro Rómbico", 5, 80, "imagenes/cubo1.jpeg", "cubo", ['2x2'], users[0])
