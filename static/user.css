@@ -27,9 +27,12 @@ section div.container {
     flex: 4;  
     display: flex;
     background-color: var(--color4);
-    align-items: center;
-    flex-direction: column;
-    padding: 3% 0;
+    align-items:center;
+    flex-direction:column ; 
+    padding: 4% 0;
+    background-color: var(--color4);
+    opacity: 0.9;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #dbca71 10px ), repeating-linear-gradient( #5c410763, #3c2502 );
 }
 
 
