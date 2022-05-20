@@ -46,4 +46,5 @@ section div.container {
 
 .container1 p {
     margin: 10px 0px;
+    max-width: fit-content;
 }

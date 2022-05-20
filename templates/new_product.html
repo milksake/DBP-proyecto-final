@@ -12,11 +12,13 @@ New Product
 {%block contenido%}
 <section>
     <ul id="toggle-menu">
-        <li>Category</li>
-        <li>Category</li>
-        <li>Category</li>
-        <li>Category</li>
-        <li>Category</li>
+        <a href="{{url_for('display_tagged_products', tag='2x2')}}"><li>2x2</li></a>
+        <a href="{{url_for('display_tagged_products', tag='3x3')}}"><li>3x3</li></a>
+        <a href="{{url_for('display_tagged_products', tag='4x4')}}"><li>4x4</li></a>
+        <a href="{{url_for('display_tagged_products', tag='5x5 +')}}"><li>5x5 +</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Pyramix')}}"><li>Pyramix</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Gear cubes')}}"><li>Gear cubes</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Mirror cubes')}}"><li>Mirror cubes</li></a>
     </ul>
     <div class="page">
 
@@ -44,6 +46,20 @@ New Product
                     <label>Imagen del producto</label>
                     <br>
                     <input type="file" name="file" autocomplete="off">
+                </div>
+
+                <div class="input-box">
+                    <label>Categoria del cubo </label>
+                    <br>
+                    <select id="category" name="category" size="1">
+                      <option value="2x2">2x2</option>
+                      <option value="3x3">3x3</option>
+                      <option value="4x4">4x4</option>
+                      <option value="5x5 +">5x5 +</option>
+                      <option value="Pyramix">Pyramix</option>
+                      <option value="Gear cubes">Gear cubes</option>
+                      <option value="Mirror cubes">Mirror cubes</option>
+                    </select>
                 </div>
 
                 <button class="btn" type="submit" style="margin-bottom: 0;">Register</button>

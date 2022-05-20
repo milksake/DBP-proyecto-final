@@ -14,7 +14,7 @@
 
 header, footer {
     background-color: var(--color2);
-    height: 10vh;
+    height: 14vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,6 +39,7 @@ header a, footer a {
     text-align: center;
     transition: color 0.2s;
     font-weight: bold;
+    white-space: nowrap
 }
 
 header a:hover, footer a:hover{
@@ -71,10 +72,15 @@ header input {
     
 }
 
+#toggle-menu a {
+    color: inherit;
+}
+
 #toggle-menu li {
     color: inherit;
     padding: 5% 0 5% 27%;
     margin: 0;
+    white-space: nowrap
 }
 
 #toggle-menu li:hover{
@@ -96,5 +102,5 @@ footer * {
 }
 
 section {
-    min-height: 80vh;
+    min-height: 72vh;
 }

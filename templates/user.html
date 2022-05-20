@@ -12,19 +12,22 @@
 {% block contenido %}
 <section>
     <ul id="toggle-menu">
-        <li>Category</li>
-        <li>Category</li>
-        <li>Category</li>
-        <li>Category</li>
-        <li>Category</li>
+        <a href="{{url_for('display_tagged_products', tag='2x2')}}"><li>2x2</li></a>
+        <a href="{{url_for('display_tagged_products', tag='3x3')}}"><li>3x3</li></a>
+        <a href="{{url_for('display_tagged_products', tag='4x4')}}"><li>4x4</li></a>
+        <a href="{{url_for('display_tagged_products', tag='5x5 +')}}"><li>5x5 +</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Pyramix')}}"><li>Pyramix</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Gear cubes')}}"><li>Gear cubes</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Mirror cubes')}}"><li>Mirror cubes</li></a>
     </ul>
     <div class="container">
-      <h1>Datos impersonales</h1>
+      <h1>Datos personales</h1>
       <p>User: {{ user.username }}</p>
       <p>Email: {{user.email}}</p>
       <h2>Products added by {{ user.username }}</h2>
+      <div class="products">
       {%for product in product_list%}
-      <div>
+      <div class="container1">
 
         <img style="border: 10px solid; color: rgba(38, 11, 3, 0.641);" img src="{{url_for('static', filename=product.image)}}" alt="" width="400" height="400" />
 
@@ -32,6 +35,7 @@
           <h3>S/.{{product.price}}</h3>
       </div>
       {%endfor%}
+      </div>
       
     </div>
 </section>
