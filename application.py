@@ -74,7 +74,10 @@ def logout():
 @app.route('/cart')
 def cart():
     if current_user.is_authenticated:
-        return render_template('cart.html', product_list=current_user.cart)
+        price = 0
+        for i in current_user.cart:
+            price += i.price
+        return render_template('cart.html', product_list=current_user.cart, price=price)
     flash("Login to add products to your cart")
     return redirect(url_for('login'))
 

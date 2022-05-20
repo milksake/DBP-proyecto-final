@@ -31,7 +31,23 @@ section div.container {
 }
 
 .container1 {
+    display: flex;
     width: 80%;
     border: 3px solid white;
     margin: 30px;
+    justify-content: space-between;
 }
+
+.right {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-text {
+    padding: 5px;
+}
+
+.left {
+    padding: 5px;
+}
+
