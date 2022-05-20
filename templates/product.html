@@ -22,12 +22,12 @@
         {% if product %}
             <div class ="container1">
                 <h1>{{product.name}}</h1>
-                <img src="{{url_for('static', filename=product.image)}}">
+                <img style="border: 3px solid; color: rgb(38, 11, 3);" img src="{{url_for('static', filename=product.image)}}" alt="" width="600" height="600" />
                 <h2>S/.{{product.price}}</h2>
-                <h3>Stars: {{product.stars}}</h3>
+                <h3>Stars: {{product.stars}}  &#11088 </h3>
                 <h3>Submitted by: {{product.user.username}}</h3>
                 <p>{{product.description}}</p>
-                <button><a href="{{url_for('add_to_cart', id=product.id)}}">Add to cart</a></button>
+                <button><a href="{{url_for('add_to_cart', id=product.id)}}">Add to cart &#128722; </a></button> 
             </div>
         {% endif %}
     </div>       
