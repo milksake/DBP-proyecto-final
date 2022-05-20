@@ -10,13 +10,15 @@ Carrito
 
 {%block contenido%}
 <section>
-        <ul id="toggle-menu">
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-        </ul>
+    <ul id="toggle-menu">
+        <a href="{{url_for('display_tagged_products', tag='2x2')}}"><li>2x2</li></a>
+        <a href="{{url_for('display_tagged_products', tag='3x3')}}"><li>3x3</li></a>
+        <a href="{{url_for('display_tagged_products', tag='4x4')}}"><li>4x4</li></a>
+        <a href="{{url_for('display_tagged_products', tag='5x5 +')}}"><li>5x5 +</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Pyramix')}}"><li>Pyramix</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Gear cubes')}}"><li>Gear cubes</li></a>
+        <a href="{{url_for('display_tagged_products', tag='Mirror cubes')}}"><li>Mirror cubes</li></a>
+    </ul>
         <div class="container">
             {% if product_list %}
                 {%for product in product_list%}
