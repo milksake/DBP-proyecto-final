@@ -105,6 +105,15 @@ def new_product():
         products.append(newProduct)
     return render_template('new_product.html')
 
+
+@app.route('/remove-from-cart/<int:id>')
+def remove_from_cart(id):
+    if current_user.is_authenticated:
+        current_user.cart.remove(get_product(id))
+        return redirect(url_for("cart", id=id))
+    flash("Login to add products to your cart")
+    return redirect(url_for('login'))
+
 @app.route('/product/<int:id>')
 def display_product(id):
     return render_template('product.html', product=get_product(id))

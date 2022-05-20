@@ -30,6 +30,7 @@ Carrito
                         </div>
                         <div class="left">
                             <h3>S/.{{product.price}}</h3>
+                            <button><a href="{{url_for('remove_from_cart', id=product.id)}}">Remove &#128722; </a></button>
                         </div>
                     </div>
                 {%endfor%}
