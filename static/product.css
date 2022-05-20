@@ -33,7 +33,8 @@ section div.container {
 }
 
 .container1 {
-    width: 80%;
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
     margin: 30px;
+  background-color: rgba(154, 164, 237, 0.33);
+
 }
