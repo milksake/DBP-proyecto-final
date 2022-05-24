@@ -1,7 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, url_for
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from user import users, get_user, User, get_user_from_email, get_user_from_id
-from products import Product, products, get_product, get_product_list, get_product_list_from_tag, search_products
+from products import Product, add_product, products, get_product, get_product_list, get_product_list_from_tag, search_products
 from werkzeug.utils import secure_filename
 import os
 
@@ -101,8 +101,7 @@ def new_product():
             #print('upload_image filename: ' + filename)
             flash('Image successfully uploaded and displayed below')
         image_dir='/imagenes/'+filename
-        newProduct = Product(len(products), request.form['product_name'], 0, request.form['price'], image_dir, request.form['description'], request.form['category'], current_user)
-        products.append(newProduct)
+        add_product(request.form['product_name'], 0, int(request.form['price']), image_dir, request.form['description'], [request.form['category']], current_user)
     return render_template('new_product.html')
 
 
