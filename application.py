@@ -101,7 +101,7 @@ def new_product():
             #print('upload_image filename: ' + filename)
             flash('Image successfully uploaded and displayed below')
         image_dir='/imagenes/'+filename
-        add_product(request.form['product_name'], 0, request.form['price'], image_dir, request.form['description'], [request.form['category']], current_user)
+        add_product(request.form['product_name'], 0, int(request.form['price']), image_dir, request.form['description'], [request.form['category']], current_user)
     return render_template('new_product.html')
 
 
