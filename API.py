@@ -22,7 +22,7 @@ def get_users():
     db = get_db()
     cursor = db.cursor()
 
-    statement = "SELECT * FROM user"
+    statement = "SELECT * FROM users"
     rows = cursor.execute(statement,).fetchall()
 
     db.commit()
@@ -34,7 +34,7 @@ def get_products():
     db = get_db()
     cursor = db.cursor()
 
-    statement = "SELECT * FROM product"
+    statement = "SELECT * FROM products"
     rows = cursor.execute(statement,).fetchall()
 
     db.commit()
