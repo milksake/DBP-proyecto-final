@@ -17,11 +17,13 @@ from products import (
 )
 from werkzeug.utils import secure_filename
 import os
+import API
 
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config["SECRET_KEY"] = "GRUPO8DEDESARROLLOBASADOENPLATAFORMAS"
+app.config["DATABASE"] = "data.db"
 
 UPLOAD_FOLDER = "static/imagenes/"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -45,7 +47,8 @@ def load_user(user_id):
 
 @app.route("/")
 def index():
-    return render_template("index.html", product_list=products)
+    #return render_template("index.html", product_list=products)
+    return "Para obtener todos los usuarios: '/get-all-users' y para obtener todos los productos: '/get-all-products'"
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -187,6 +190,22 @@ def display_searched_products(text):
         flash("There are no products that contain " + text)
     return render_template("index.html", product_list=product_list)
 
+# API functions
+
+@app.route('/get-all-users')
+def get_all_users():
+    with app.app_context():
+        u = API.get_users()
+    return u
+
+@app.route('/get-all-products')
+def get_all_products():
+    with app.app_context():
+        p = API.get_products()
+    return p
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000, debug=True)
+    with app.app_context():
+        API.close_db()
